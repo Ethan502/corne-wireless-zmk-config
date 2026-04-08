@@ -10,6 +10,18 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+    behaviors {
+        better_MT: better_MT {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BETTER_MT";
+            bindings = <&mt>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <10>;
+            hold-trigger-key-positions = <13 14 15 16 19 20 21 22>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -22,10 +34,10 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB    &kp Q  &kp W           &kp E        &kp R         &kp T            &kp Y      &kp U         &kp I       &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &mt LEFT_ALT S  &mt LCTRL D  &mt LSHIFT F  &kp G            &kp H      &mt LSHIFT J  &kp K       &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X           &kp C        &kp V         &kp B            &kp N      &kp M         &kp COMMA   &kp DOT  &kp FSLH  &kp ESC
-                                  &kp LGUI     &lt 1 TAB     &kp BACKSPACE    &kp SPACE  &lt 2 RETURN  &kp ESCAPE
+&kp TAB    &kp Q  &kp W                  &kp E               &kp R                &kp T            &kp Y      &kp U         &kp I                       &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &better_MT LEFT_ALT S  &better_MT LCTRL D  &better_MT LSHIFT F  &kp G            &kp H      &mt LSHIFT J  &better_MT RIGHT_CONTROL K  &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X                  &kp C               &kp V                &kp B            &kp N      &kp M         &kp COMMA                   &kp DOT  &kp FSLH  &kp ESC
+                                         &kp LGUI            &lt 1 TAB            &kp BACKSPACE    &kp SPACE  &lt 2 RETURN  &kp ESCAPE
             >;
         };
 
@@ -38,9 +50,9 @@
 
             display-name = "Lower";
             bindings = <
-&kp TAB     &kp N1          &kp N2        &kp N3        &kp N4        &kp N5          &kp N6          &kp N7           &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT        &kp DOWN         &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &bt BT_CLR_ALL  &trans        &trans        &trans        &trans          &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &trans    &trans     &trans  &trans
+&kp TAB     &kp N1          &kp N2        &kp N3        &kp N4        &kp N5          &kp N6          &kp N7           &kp N8    &kp N9  &kp N0     &kp BSPC
+&bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp ASTERISK    &kp LEFT         &kp DOWN  &kp UP  &kp RIGHT  &kp COLON
+&kp LSHFT   &bt BT_CLR_ALL  &trans        &trans        &trans        &trans          &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &trans    &trans  &trans     &trans
                                           &kp LGUI      &trans        &kp SPACE       &kp RET         &trans           &kp RALT
             >;
         };

@@ -68,7 +68,7 @@
             bindings = <
 &kp DOLLAR  &kp PERCENT  &kp N7  &kp N8                &kp N9                 &kp EXCLAMATION      &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
 &kp LCTRL   &kp AT_SIGN  &kp N4  &kp N5                &kp N6                 &kp DOUBLE_QUOTES    &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT   &kp POUND    &kp N1  &kp N2                &kp N3                 &kp QUESTION         &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
+&kp TILDE   &kp POUND    &kp N1  &kp N2                &kp N3                 &kp QUESTION         &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
                                  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp NUMBER_0         &kp RET    &trans     &kp RALT
             >;
         };
